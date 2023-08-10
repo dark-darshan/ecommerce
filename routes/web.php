@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::get('/filter-products', [ProductController::class, 'filterProductsView'])->name('filter.products.view');
+Route::get('/filter-products/ajax', [ProductController::class, 'filterProducts'])->name('filter.products');
+
