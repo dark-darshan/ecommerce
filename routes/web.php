@@ -18,6 +18,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::redirect('/', '/filter-products');
 
 Route::get('/filter-products', [ProductController::class, 'filterProductsView'])->name('filter.products.view');
 Route::get('/filter-products/ajax', [ProductController::class, 'filterProducts'])->name('filter.products');
